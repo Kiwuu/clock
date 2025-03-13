@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-</html>
 <body>
     <div id="KywooOSTime"></div>
+    <style>
+        #KywooOSTime {
+            font-size: 4em;
+            text-align: center;
+            font-family: "Comic Sans MS", sans-serif;
+        }
+    </style>
+
     <script>
-        function updateClock() {
+        function variable1() {
             let options = {
                  timeZone: "Asia/Tokyo", // Region changing by rule Continent/City. For example Asia/Tokyo.
                  hour: "2-digit",
@@ -15,8 +22,8 @@
             document.getElementById("KywooOSTime").innerText = timeString;
             return timeString;
         }
-        setInterval(updateClock, 1000);
-        updateClock();
+        setInterval(variable1, 1000);
+        variable1();
     </script>
 </body>
 </html>
