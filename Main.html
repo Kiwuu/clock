@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<body>
+    <div id="KywooOSTime"></div>
+    <script>
+        function updateClock() {
+            let options = {
+                 timeZone: "Asia/Tokyo", // Region changing by rule Continent/City. For example Asia/Tokyo.
+                 hour: "2-digit",
+                 minute: "2-digit",
+                 second: "2-digit", 
+                 hour12: false // true or false for PM/AM
+                };
+            let timeString = new Intl.DateTimeFormat(undefined, options).format(new Date());
+            document.getElementById("KywooOSTime").innerText = timeString;
+            return timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
