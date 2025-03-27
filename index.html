@@ -1,9 +1,13 @@
-function abc() { 
-  let now = new Date();
-  let now_tokyo = now.toLocaleString("en-US", {
-      timeStyle: "medium",
-      timeZone: "Asia/Tokyo",
-      hourCycle: "h23"
-  });
-  return now_tokyo;
-}
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="KywooOSTime"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js'></script>
+  <script>
+    function getKywooOSTime() {
+      return moment().tz("Asia/Tokyo").format('HH:mm:ss');
+    }
+</script>
+</body>
+</html>
