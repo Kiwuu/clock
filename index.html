@@ -1,5 +1,17 @@
-<!DOCTYPE html>
+```<!DOCTYPE html>
 <html>
+<head>
+  <style>
+    #KywooOSTime {
+      font-family: "Blackadder ITC", cursive;
+      font-size: 72px;
+    }
+    #text {
+      font-family: "Blackadder ITC", cursive;
+      font-size: 72px;
+    }
+  </style>
+</head>
 <body>
   <div id="KywooOSTime"></div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
@@ -9,12 +21,47 @@
       return moment().tz("Asia/Tokyo").format('HH:mm:ss');
     }
 
+    function getKywooOSDay() {
+      return moment().tz("Asia/Tokyo").format('DD');
+    }
+
+    function getKywooOSMonth() {
+      return moment().tz("Asia/Tokyo").format('MM');
+    }
+
+    function getKywooOSYear() {
+      return moment().tz("Asia/Tokyo").format('YYYY');
+    }
+
+    function getKywooOSDaysInYear() {
+      return moment().tz("Asia/Tokyo").isLeapYear() ? 366 : 365;
+    }
+
+    function getKywooOSDayOfYear() {
+      return moment().tz("Asia/Tokyo").dayOfYear();
+    }
+
     function updateKywooOSTime() {
-      document.getElementById('KywooOSTime').innerText = "|" + getKywooOSTime() + "|";
+      document.getElementById('KywooOSTime').innerText = 
+        "|" 
+        + getKywooOSTime() + 
+        "|" 
+        + getKywooOSDay() + 
+        "|"
+        + getKywooOSMonth() + 
+        "|"
+        + getKywooOSYear() + 
+        "|"
+        + getKywooOSDayOfYear() + 
+        "|"
+        + getKywooOSDaysInYear() +
+        "|";
     }
     setInterval(updateKywooOSTime, 1000);
 
     updateKywooOSTime();
   </script>
+  <div id="text">lovely made by kywoo & andri!~</div>
 </body>
 </html>
+```
