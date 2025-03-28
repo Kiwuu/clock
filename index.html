@@ -6,7 +6,7 @@
       font-family: "Blackadder ITC", cursive;
       font-size: 72px;
     }
-    #Text {
+    #text {
       font-family: "Blackadder ITC", cursive;
       font-size: 72px;
     }
@@ -41,6 +41,12 @@
       return moment().tz("Asia/Tokyo").dayOfYear();
     }
 
+    function getKywooOSCounterOfDay() {
+      const startDate = moment.tz("2024-09-02","Asia/Tokyo");
+      const rightNow = moment.tz("Asia/Tokyo");
+      return rightNow.diff(startDate,'days') + 1;
+    }
+
     function updateKywooOSTime() {
       document.getElementById('KywooOSTime').innerText = 
         "|" 
@@ -55,7 +61,10 @@
         + getKywooOSDayOfYear() + 
         "|"
         + getKywooOSDaysInYear() +
-        "|";
+        "|"
+        + getKywooOSCounterOfDay() +
+        "|"
+        ;
     }
     setInterval(updateKywooOSTime, 1000);
 
@@ -63,5 +72,4 @@
   </script>
   <div id="text">lovely made by kywoo & andri!~</div>
 </body>
-</html>
-```
+</html>```
